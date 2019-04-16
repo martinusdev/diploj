@@ -22,7 +22,6 @@ def blinkSlow():
         time.sleep(0.4)
         ledOn()
         time.sleep(0.4)
-    
 
 print('Diploj button Started')
 
@@ -34,8 +33,8 @@ GPIO.setup(6, GPIO.OUT, initial=GPIO.HIGH)
 blinkSlow()
 
 while True:
+    time.sleep(0.1)	#cpu
     input_state = GPIO.input(18)
-    sleep(0.1)	#cpu
     if input_state == True:
         print('Button pressed')
         p = subprocess.Popen('./real-deploy-command.sh')
